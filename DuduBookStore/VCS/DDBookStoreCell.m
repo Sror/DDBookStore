@@ -18,28 +18,28 @@
 - (void)setDataArray:(NSMutableArray *)array
 {
     _dataArray = array;
-    [self.scrollView setContentSize:CGSizeMake(82*[self.dataArray count]+14, 150)];
+    [self.scrollView setContentSize:CGSizeMake(83*[self.dataArray count]+14, 150)];
     for (int i=0; i<[self.dataArray count]; i++)
     {
         DDBook *book = [self.dataArray objectAtIndex:i];
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(82*i+14, 2, 68, 103);
+        btn.frame = CGRectMake(83*i+14, 2, 68, 103);
         [btn setImage:[UIImage imageNamed:book.cover] forState:UIControlStateNormal];
         [self.scrollView addSubview:btn];
         
-        UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(82*i+14, 107, 68, 15)];
+        UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(83*i+14, 107, 68, 15)];
         label1.font = [UIFont systemFontOfSize:13];
         label1.text = book.name;
         label1.textColor = [UIColor darkGrayColor];
         [self.scrollView addSubview:label1];
         
-        UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(82*i+14, 121, 68, 12)];
+        UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(83*i+14, 121, 68, 12)];
         label2.font = [UIFont systemFontOfSize:10];
         label2.text = book.writer;
         label2.textColor = [UIColor lightGrayColor];
         [self.scrollView addSubview:label2];
         
-        UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(82*i+14, 137, 68, 12)];
+        UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(83*i+14, 137, 68, 12)];
         label3.font = [UIFont systemFontOfSize:10];
         label3.text = book.sort;
         label3.textColor = [UIColor lightGrayColor];

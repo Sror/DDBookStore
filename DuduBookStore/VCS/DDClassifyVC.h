@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 Iceland. All rights reserved.
 //
 
-#import "FBViewController.h"
+#import "FBTableViewController.h"
 
-@interface DDClassifyVC : FBViewController
+@interface DDClassifyVC : FBTableViewController
 
 @end

@@ -69,6 +69,8 @@
 		07ADA4F019A0B22100C6C26B /* bookStoreFlag4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07ADA4EE19A0B22000C6C26B /* bookStoreFlag4@2x.png */; };
 		07ADA4F119A0B22100C6C26B /* bookStoreFlag5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07ADA4EF19A0B22100C6C26B /* bookStoreFlag5@2x.png */; };
 		07ADA4F319A0B4C400C6C26B /* test_news2.png in Resources */ = {isa = PBXBuildFile; fileRef = 07ADA4F219A0B4C400C6C26B /* test_news2.png */; };
+		07B0807819A50694003AFA0F /* DDClassifyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B0807619A50694003AFA0F /* DDClassifyCell.m */; };
+		07B0807919A50694003AFA0F /* DDClassifyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07B0807719A50694003AFA0F /* DDClassifyCell.xib */; };
 		C5A7AF521998952C002996E0 /* DDBookshelfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7AF501998952C002996E0 /* DDBookshelfVC.m */; };
 		C5A7AF531998952C002996E0 /* DDBookshelfVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A7AF511998952C002996E0 /* DDBookshelfVC.xib */; };
 		C5A7AF57199895F9002996E0 /* DDMyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7AF55199895F9002996E0 /* DDMyVC.m */; };
@@ -200,6 +202,9 @@
 		07ADA4EE19A0B22000C6C26B /* bookStoreFlag4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookStoreFlag4@2x.png"; sourceTree = "<group>"; };
 		07ADA4EF19A0B22100C6C26B /* bookStoreFlag5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookStoreFlag5@2x.png"; sourceTree = "<group>"; };
 		07ADA4F219A0B4C400C6C26B /* test_news2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_news2.png; sourceTree = "<group>"; };
+		07B0807519A50694003AFA0F /* DDClassifyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDClassifyCell.h; sourceTree = "<group>"; };
+		07B0807619A50694003AFA0F /* DDClassifyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDClassifyCell.m; sourceTree = "<group>"; };
+		07B0807719A50694003AFA0F /* DDClassifyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDClassifyCell.xib; sourceTree = "<group>"; };
 		C5A7AF4F1998952C002996E0 /* DDBookshelfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDBookshelfVC.h; sourceTree = "<group>"; };
 		C5A7AF501998952C002996E0 /* DDBookshelfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDBookshelfVC.m; sourceTree = "<group>"; };
 		C5A7AF511998952C002996E0 /* DDBookshelfVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDBookshelfVC.xib; sourceTree = "<group>"; };
@@ -378,6 +383,9 @@
 				C5A7AF721998AEE4002996E0 /* DDClassifyVC.h */,
 				C5A7AF731998AEE4002996E0 /* DDClassifyVC.m */,
 				C5A7AF741998AEE4002996E0 /* DDClassifyVC.xib */,
+				07B0807519A50694003AFA0F /* DDClassifyCell.h */,
+				07B0807619A50694003AFA0F /* DDClassifyCell.m */,
+				07B0807719A50694003AFA0F /* DDClassifyCell.xib */,
 				C5A7AF771998AEFE002996E0 /* DDSearchVC.h */,
 				C5A7AF781998AEFE002996E0 /* DDSearchVC.m */,
 				C5A7AF791998AEFE002996E0 /* DDSearchVC.xib */,
@@ -655,6 +663,7 @@
 				07ADA4DC19A0AE9B00C6C26B /* hotbook1@2x.png in Resources */,
 				C5A7AFB51998E18E002996E0 /* shujia_reH@2x.png in Resources */,
 				C5A7AF981998C4F1002996E0 /* my_zhuxiao@2x.png in Resources */,
+				07B0807919A50694003AFA0F /* DDClassifyCell.xib in Resources */,
 				C5A7AF801998AF0D002996E0 /* DDFindVC.xib in Resources */,
 				07ADA4B7199F6E9800C6C26B /* bookStoreFlag1@2x.png in Resources */,
 				076E00C2199126E400FC63D1 /* tab4@2x.png in Resources */,
@@ -751,6 +760,7 @@
 				C5A7AF841998AF27002996E0 /* DDBookBarVC.m in Sources */,
 				072EBAF1198FD1BA008281CF /* AppDelegate.m in Sources */,
 				072EBAED198FD1BA008281CF /* main.m in Sources */,
+				07B0807819A50694003AFA0F /* DDClassifyCell.m in Sources */,
 				076E00DE19912D1600FC63D1 /* FBNavigationController.m in Sources */,
 				076E00E319912D6800FC63D1 /* DDBook.m in Sources */,
 				072EBB2C19911DF4008281CF /* FBUtils.m in Sources */,

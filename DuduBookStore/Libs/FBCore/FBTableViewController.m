@@ -26,6 +26,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UILabel *t = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
+    t.font = [UIFont systemFontOfSize:18];
+    t.textColor = [UIColor whiteColor];
+    t.backgroundColor = [UIColor clearColor];
+    t.textAlignment = NSTextAlignmentCenter;
+    t.text = _titleName;
+    self.title = _titleName;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,16 +51,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.dataArray count];
 }
 
 

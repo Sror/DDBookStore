@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBTableViewController : UITableViewController
+@interface FBTableViewController:UITableViewController
+@property (nonatomic,copy)NSString *titleName;
+@property (nonatomic,strong)NSMutableArray *dataArray;
 
 @end

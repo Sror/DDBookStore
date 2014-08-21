@@ -12,10 +12,16 @@
 
 - (void)awakeFromNib
 {
+
+}
+
+- (void)setArray:(NSMutableArray *)array
+{
+    _array = array;
 #define BUTTON_WIDTH 97
 #define BUTTON_HEIGHT 30
 #define BUTTON_TAG 1000
-
+    
 	for (int i = 0; i < 9; i++)
 	{
 		int row = i / 3 + 1;
@@ -26,14 +32,17 @@
 		UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
 		btn.frame = CGRectMake(x, y, BUTTON_WIDTH, BUTTON_HEIGHT);
 		[btn addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        if (i<[_array count])
+        btn.titleLabel.font = [UIFont systemFontOfSize:12];
+        [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        if (i<[self.array count])
         {
-            [btn setTitle:[_array objectAtIndex:i] forState:UIControlStateNormal];
+            [btn setTitle:[self.array objectAtIndex:i] forState:UIControlStateNormal];
         }
         btn.tag = (i + 1 )+BUTTON_TAG;
         [self.classView addSubview:btn];
 	}
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

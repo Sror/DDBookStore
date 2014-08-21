@@ -6,10 +6,13 @@
 //  Copyright (c) 2014年 Iceland. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "FBViewController.h"
 
-@interface FBTableViewController:UITableViewController
-@property (nonatomic,copy)NSString *titleName;
+@interface FBTableViewController:FBViewController
+
+@property (nonatomic,strong)UITableView *tableView;
 @property (nonatomic,strong)NSMutableArray *dataArray;
+//@property (nonatomic,weak)int *row;
+
 
 @end

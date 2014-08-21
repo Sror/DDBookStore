@@ -10,7 +10,8 @@
 
 @interface DDMacro : NSObject
 
-#define flagStrArray @[@"精品新书",@"热门畅销",@"限时特价",@"免费图书",@"期刊杂志"]
+#define flagStrArray1 @[@"精品新书",@"热门畅销",@"限时特价",@"免费图书",@"期刊杂志"]
+#define flagStrArray2 @[@"出版图书",@"男频图书",@"女频图书",@"期刊杂志",@"畅销推荐"]
 
 
 #define bookImageArray1 @[@"newbook1.png",@"newbook2.png",@"newbook3.png",@"newbook4.png",@"newbook5.png",@"newbook6.png",@"newbook7.png",@"newbook8.png",@"newbook9.png",@"newbook10.png"]
@@ -43,6 +44,10 @@
 
 
 
+#define FenLei1 @[@"出版图书",@"流行小说",@"名著传记",@"社科历史",@"文学艺术",@"两性情感",@"生活时尚",@"亲自少儿",@"漫画绘本"]
+#define FenLei2 @[@"武侠仙侠",@"玄幻奇幻",@"都市言情",@"历史传奇",@"职场商场",@"军事谍战",@"悬疑灵异",@"探险推理",@"游戏竞技"]
+#define FenLei3 @[@"古代言情",@"浪漫青春",@"恋爱感情",@"穿越架空",@"宫斗宅斗"@"耽美同人",@"短篇美文",@"女尊女强",@"恐怖惊悚"]
+#define FenLei4 @[@"商务投资",@"居家生活",@"新闻报道",@"汽车旅游",@"娱乐时尚",@"自然地理",@"数码科技",@"健康健美",@"艺术摄影"]
 
 
 

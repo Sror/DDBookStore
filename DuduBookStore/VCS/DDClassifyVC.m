@@ -8,7 +8,9 @@
 
 #import "DDClassifyVC.h"
 #import "DDClassifyCell.h"
-@interface DDClassifyVC ()
+#import "DDBookStoreCell.h"
+
+@interface DDClassifyVC ()<UITableViewDataSource>
 
 @end
 
@@ -26,7 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 136;
+    self.tableView.separatorColor = [UIColor clearColor];
+    self.dataArray = [[NSMutableArray alloc] initWithObjects:FenLei1,FenLei2,FenLei3,FenLei4,nil];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,24 +41,67 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (NSMutableArray *)fakeData
+{
+    NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:nil];
+    for (int j = 0; j<[bookImageArray1 count]; j++)
+    {
+        DDBook *book = [[DDBook alloc] init];
+        book.cover = [bookImageArray1 objectAtIndex:j];
+        book.name = [booknameArray1 objectAtIndex:j];
+        book.writer = [bookwriterArray1 objectAtIndex:j];
+        book.sort = [bookSortArray1 objectAtIndex:j];
+        [array addObject:book];
+    }
+    return array;
+}
 #pragma mark -
 #pragma mark - TableView DataSource
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    DDClassifyCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil)
+    if (indexPath.row!=[self.dataArray count]-1)
     {
-        NSArray *cellNib = [[NSBundle mainBundle] loadNibNamed:@"DDClassifyCell" owner:self options:nil];
-        for (id oneObject in cellNib)
+        DDClassifyCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
         {
-            if ([oneObject isKindOfClass:[DDClassifyCell class]])
+            NSArray *cellNib = [[NSBundle mainBundle] loadNibNamed:@"DDClassifyCell" owner:self options:nil];
+            for (id oneObject in cellNib)
             {
-                cell = (DDClassifyCell *)oneObject;
+                if ([oneObject isKindOfClass:[DDClassifyCell class]])
+                {
+                    cell = (DDClassifyCell *)oneObject;
+                }
             }
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.tagBtn setTitle:[flagStrArray2 objectAtIndex:indexPath.row] forState:UIControlStateNormal];
+        [cell.tagBtn setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"bookStoreFlag%d.png",(int)indexPath.row+1]] forState:UIControlStateNormal];
+        cell.array = [self.dataArray objectAtIndex:indexPath.row];
+        return cell;
     }
-    return cell;
+    else
+    {
+        DDBookStoreCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil)
+        {
+            NSArray *cellNib = [[NSBundle mainBundle] loadNibNamed:@"DDBookStoreCell" owner:self options:nil];
+            for (id oneObject in cellNib)
+            {
+                if ([oneObject isKindOfClass:[DDBookStoreCell class]])
+                {
+                    cell = (DDBookStoreCell *)oneObject;
+                }
+            }
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell.flagBtn setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"bookStoreFlag%d.png",(int)indexPath.row+1]] forState:UIControlStateNormal];
+        [cell.flagBtn setTitle:[flagStrArray1 objectAtIndex:indexPath.row] forState:UIControlStateNormal];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.dataArray = [self fakeData];
+        return cell;
+    }
+
 }
 
 #pragma mark -

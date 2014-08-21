@@ -8,17 +8,18 @@
 
 #import "FBTableViewController.h"
 
-@interface FBTableViewController ()
+@interface FBTableViewController ()<UITableViewDelegate>
+
 
 @end
 
 @implementation FBTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -26,13 +27,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.autoresizesSubviews = YES;
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.tableView.delegate = self;
+    self.tableView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:_tableView];
     UILabel *t = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
     t.font = [UIFont systemFontOfSize:18];
     t.textColor = [UIColor whiteColor];
     t.backgroundColor = [UIColor clearColor];
     t.textAlignment = NSTextAlignmentCenter;
-    t.text = _titleName;
-    self.title = _titleName;
+    t.text = self.titleName;
+    self.title = self.titleName;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

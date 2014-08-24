@@ -7,8 +7,11 @@
 //
 
 #import "DDSearchVC.h"
+#import "DDSearchHomeCell.h"
 
-@interface DDSearchVC ()
+@interface DDSearchVC ()<UITableViewDataSource>
+
+@property (strong, nonatomic) IBOutlet UIView *headView;
 
 @property (weak, nonatomic) IBOutlet UIButton *tagBtn1;
 @property (weak, nonatomic) IBOutlet UIButton *tagBtn2;
@@ -24,6 +27,9 @@
 
 @property (strong, nonatomic) NSMutableArray *centerArray;
 @property (strong, nonatomic) NSMutableArray *strArray;
+
+
+
 
 - (IBAction)annimationAction:(id)sender;
 
@@ -48,6 +54,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.tableHeaderView = self.headView;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 129;
+
     [self getCenterArray];
 }
 
@@ -106,4 +116,39 @@
         }];
     }
 }
+
+#pragma mark -
+#pragma mark - TableView DataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    DDSearchHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        NSArray *cellNib = [[NSBundle mainBundle] loadNibNamed:@"DDSearchHomeCell" owner:self options:nil];
+        for (id oneObject in cellNib)
+        {
+            if ([oneObject isKindOfClass:[DDSearchHomeCell class]])
+            {
+                cell = (DDSearchHomeCell *)oneObject;
+            }
+        }
+    }
+
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+#pragma mark -
+#pragma mark - TableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 @end

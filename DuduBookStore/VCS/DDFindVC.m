@@ -7,8 +7,11 @@
 //
 
 #import "DDFindVC.h"
+#import "CWImageScrollView.h"
 
-@interface DDFindVC ()
+@interface DDFindVC ()<CWImageScrollViewDelegate>
+@property (strong, nonatomic) CWImageScrollView *imageScrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 
 @end
 
@@ -26,13 +29,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.scrollview setContentSize:CGSizeMake(320, 520)];
+    self.imageScrollView = [[CWImageScrollView alloc] initWithFrame:CGRectMake(10, 110, 297, 95)];
+    self.imageScrollView.delegate = self;
+    [self.scrollview addSubview:_imageScrollView];
+    [self.imageScrollView reloadData];
 }
 
-- (void)didReceiveMemoryWarning
+
+- (NSInteger)numberOfImageScrollView:(CWImageScrollView *)imaScro
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return 3;
 }
 
+- (UIImageView *)imageScrollView:(CWImageScrollView *)imaScro imageViewForPageAtIndex:(int)index
+{
+    UIImageView *ima = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"findtest%d.png",index+1]]];
+    ima.frame = CGRectMake(0, 0, 297, 95);
+    return ima;
+}
 @end

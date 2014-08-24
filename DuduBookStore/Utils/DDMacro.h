@@ -49,6 +49,7 @@
 #define FenLei3 @[@"古代言情",@"浪漫青春",@"恋爱感情",@"穿越架空",@"宫斗宅斗"@"耽美同人",@"短篇美文",@"女尊女强",@"恐怖惊悚"]
 #define FenLei4 @[@"商务投资",@"居家生活",@"新闻报道",@"汽车旅游",@"娱乐时尚",@"自然地理",@"数码科技",@"健康健美",@"艺术摄影"]
 
+#define ClassifyArray @[@"classify1.png",@"classify2.png",@"classify3.png",@"classify4.png"]
 
 
 

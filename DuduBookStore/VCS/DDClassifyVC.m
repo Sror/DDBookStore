@@ -78,6 +78,7 @@
         [cell.tagBtn setTitle:[flagStrArray2 objectAtIndex:indexPath.row] forState:UIControlStateNormal];
         [cell.tagBtn setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"bookStoreFlag%d.png",(int)indexPath.row+1]] forState:UIControlStateNormal];
         cell.array = [self.dataArray objectAtIndex:indexPath.row];
+        cell.iv.image = [UIImage imageNamed:[ClassifyArray objectAtIndex:indexPath.row]];
         return cell;
     }
     else

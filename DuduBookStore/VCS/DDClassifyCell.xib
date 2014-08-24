@@ -26,12 +26,19 @@
                     <view contentMode="scaleToFill" id="KR8-F5-O1p">
                         <rect key="frame" x="16" y="40" width="288" height="92"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="QUK-yS-bkq">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.94117653369903564" green="0.94117653369903564" blue="0.94117653369903564" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="classView" destination="KR8-F5-O1p" id="W8o-Hb-3Pn"/>
+                <outlet property="iv" destination="QUK-yS-bkq" id="TWz-JV-SR9"/>
                 <outlet property="tagBtn" destination="Z3t-7W-CNX" id="sbi-QZ-uu3"/>
             </connections>
         </tableViewCell>

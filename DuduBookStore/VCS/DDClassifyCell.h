@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSMutableArray *array;
 
 
+@property (weak, nonatomic) IBOutlet UIImageView *iv;
 
 @end

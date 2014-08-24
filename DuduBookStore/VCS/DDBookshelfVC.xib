@@ -23,44 +23,44 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZDp-iB-SGR">
-                            <rect key="frame" x="20" y="133" width="67" height="104"/>
+                            <rect key="frame" x="20" y="133" width="68" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button" image="newbook1.png">
+                            <state key="normal" title="Button" image="shelter1.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="57m-3W-dWe">
-                            <rect key="frame" x="126" y="133" width="67" height="104"/>
+                            <rect key="frame" x="126" y="133" width="68" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button" image="newbook2.png">
+                            <state key="normal" title="Button" image="shelter2.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ils-X4-zyG">
-                            <rect key="frame" x="232" y="133" width="67" height="104"/>
+                            <rect key="frame" x="232" y="133" width="68" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button" image="newbook4.png">
+                            <state key="normal" title="Button" image="shelter3.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BEn-Rn-E9E">
-                            <rect key="frame" x="20" y="275" width="68" height="104"/>
+                            <rect key="frame" x="20" y="275" width="68" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button" image="hotbook1.png">
+                            <state key="normal" title="Button" image="shelter4.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="bdM-9T-NTS">
-                            <rect key="frame" x="126" y="275" width="68" height="104"/>
+                            <rect key="frame" x="126" y="275" width="68" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button" image="hotbook2.png">
+                            <state key="normal" title="Button" image="shelter5.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4Ct-fE-VFW">
-                            <rect key="frame" x="232" y="275" width="68" height="104"/>
+                            <rect key="frame" x="232" y="275" width="68" height="106"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button" image="hotbook3.png">
+                            <state key="normal" title="Button" image="shelter6.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
@@ -229,13 +229,13 @@
         </view>
     </objects>
     <resources>
-        <image name="hotbook1.png" width="68" height="102"/>
-        <image name="hotbook2.png" width="68" height="102"/>
-        <image name="hotbook3.png" width="68" height="102"/>
-        <image name="newbook1.png" width="68" height="102"/>
-        <image name="newbook2.png" width="68" height="102"/>
-        <image name="newbook4.png" width="68" height="102"/>
         <image name="newbooknil.png" width="68" height="106"/>
+        <image name="shelter1.png" width="68" height="106"/>
+        <image name="shelter2.png" width="68" height="106"/>
+        <image name="shelter3.png" width="68" height="106"/>
+        <image name="shelter4.png" width="68" height="106"/>
+        <image name="shelter5.png" width="68" height="106"/>
+        <image name="shelter6.png" width="68" height="106"/>
         <image name="shujia_edit.png" width="38" height="30"/>
         <image name="shujia_re.png" width="38" height="30"/>
         <image name="shujia_seBack.png" width="213" height="30"/>

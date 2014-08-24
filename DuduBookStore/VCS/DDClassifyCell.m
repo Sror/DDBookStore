@@ -36,7 +36,7 @@
         [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         if (i<[self.array count])
         {
-            [btn setTitle:[self.array objectAtIndex:i] forState:UIControlStateNormal];
+//            [btn setTitle:[self.array objectAtIndex:i] forState:UIControlStateNormal];
         }
         btn.tag = (i + 1 )+BUTTON_TAG;
         [self.classView addSubview:btn];

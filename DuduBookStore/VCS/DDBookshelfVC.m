@@ -170,7 +170,7 @@
     UIColor *titleColor = [FBUtils colorWithHexString:@"666666"];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        titleColor, UITextAttributeTextColor,nil] forState:UIControlStateNormal];
-    UIColor *titleHighlightedColor = [FBUtils colorWithHexString:@"fb5e19"];
+    UIColor *titleHighlightedColor = [FBUtils colorWithHexString:@"d41e36"];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        titleHighlightedColor, UITextAttributeTextColor,
                                                        nil] forState:UIControlStateSelected];

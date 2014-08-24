@@ -53,7 +53,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightbtn];
     
     
-    [self.scrollview setContentSize:CGSizeMake(320, 387)];
+    [self.scrollview setContentSize:CGSizeMake(320, 434)];
 }
 
 - (void)didReceiveMemoryWarning

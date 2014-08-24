@@ -27,7 +27,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.titleName = @"书馆";
+        self.titleName = @"嘟嘟书馆";
     }
     return self;
 }

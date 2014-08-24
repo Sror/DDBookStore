@@ -55,7 +55,7 @@
 #pragma mark - TableView Delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row==[self.dataArray count]-1)
+    if (indexPath.row==[self.dataArray count])
         return 195;
     else
         return 136;
@@ -65,13 +65,13 @@
 #pragma mark - TableView DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataArray count];
+    return [self.dataArray count]+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    if (indexPath.row!=[self.dataArray count]-1)
+    if (indexPath.row<[self.dataArray count])
     {
         DDClassifyCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil)

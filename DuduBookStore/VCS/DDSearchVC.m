@@ -9,6 +9,13 @@
 #import "DDSearchVC.h"
 #import "DDSearchHomeCell.h"
 
+#define BOOKIMAGE_ARRAY @[@"shelter1.png",@"shelter5.png",@"newbook10.png"]
+#define NAME_ARRAY @[@"繁荣还是危机",@"信任的速度",@"小王子"]
+#define WRITER_ARRAY @[@"王宇",@"[美]史蒂芬?柯维",@"[法]圣埃克?苏佩里"]
+#define RANK_ARRAY @[@"第一名",@"第二名",@"第三名"]
+#define TYPE_ARRAY @[@"经管励志",@"社科历史",@"文学艺术"]
+#define DETAIL_ARRAY @[@"繁荣还是危机:后海啸时代的经济迷局》主要内容：危机固然可怕，但更可怕的是繁荣表象掩盖下的危机和对于危机的熟视无睹。剖析历史，目的是为了不再让历史重演！",@"它可以使组织改善业绩，使个人得到提升，使关系更加融洽。在《信任的速度》新书《信任的速度》里，史蒂芬·M·R·柯维通过“五波信任”，“四个核心”以及世界各地高信任度领导者共有的“十三种行为”生动形象地阐述了如何在个人关系和职业生涯中激发和维护信任，层层递进地为我们",@"小王子是一个超凡脱俗的仙童，他住在一颗只比他大一丁点儿的小行星上。陪伴他的是一朵他非常喜爱的小玫瑰花。但玫瑰花的虚荣心伤害了小王子对她的感情。小王子告别小行星，开始了遨游太空的旅行。他先后访问了六个行星，各种见闻使他陷入忧伤，他感到大人们荒唐可笑、太不正常。只有在其中一个点灯人的星球上，小王子才找到一个可以作为朋友的人。但点灯人的"]
+
 @interface DDSearchVC ()<UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIView *headView;
@@ -27,10 +34,6 @@
 
 @property (strong, nonatomic) NSMutableArray *centerArray;
 @property (strong, nonatomic) NSMutableArray *strArray;
-
-
-
-
 - (IBAction)annimationAction:(id)sender;
 
 @end
@@ -122,7 +125,7 @@
 #pragma mark - TableView DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -140,6 +143,12 @@
             }
         }
     }
+    cell.booIV.image = [UIImage imageNamed:[BOOKIMAGE_ARRAY objectAtIndex:indexPath.row]];
+    cell.nameLB.text = [NAME_ARRAY objectAtIndex:indexPath.row];
+    cell.writerLB.text = [WRITER_ARRAY objectAtIndex:indexPath.row];
+    cell.typeLB.text = [TYPE_ARRAY objectAtIndex:indexPath.row];
+    cell.summaryLB.text = [DETAIL_ARRAY objectAtIndex:indexPath.row];
+    cell.countLB.text = [RANK_ARRAY objectAtIndex:indexPath.row];
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

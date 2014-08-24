@@ -15,9 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *writerLB;
 @property (weak, nonatomic) IBOutlet UILabel *typeLB;
 @property (weak, nonatomic) IBOutlet UILabel *summaryLB;
+@property (strong, nonatomic) IBOutlet UILabel *countLB;
 
-
-
-@property (weak, nonatomic) IBOutlet UILabel *countLB;
 
 @end

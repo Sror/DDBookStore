@@ -31,8 +31,6 @@
     _revealSideViewController.delegate = self;
 //    _revealSideViewController.popFromPanGesture = YES;
 
-    
-
     [self.window setRootViewController:_revealSideViewController];
     PP_RELEASE(main);
     PP_RELEASE(nav);

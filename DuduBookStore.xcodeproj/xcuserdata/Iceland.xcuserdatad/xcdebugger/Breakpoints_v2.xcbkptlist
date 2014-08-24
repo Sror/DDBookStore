@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DuduBookStore/Libs/CWImageSV/CWImageScrollView.m"
-            timestampString = "430565597.984591"
+            timestampString = "430568878.75863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-updateDots"
             landmarkType = "5">
          </BreakpointContent>

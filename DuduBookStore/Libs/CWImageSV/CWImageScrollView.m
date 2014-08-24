@@ -49,8 +49,7 @@
         self.pageCtrl.userInteractionEnabled = NO;
         self.pageCtrl.currentPage = 0;
         [self addSubview:_pageCtrl];
-        
-        self.currentPage = 0;
+        self.pageCtrl.hidden = YES;
         [self updateDots];
     }
     return self;
@@ -72,16 +71,25 @@
         }
         else
         {
-            if ([[self.pageCtrl.subviews objectAtIndex:i] isKindOfClass:[UIImageView class]])
-            {
-                UIImageView *dot = (UIImageView *)[self.pageCtrl.subviews objectAtIndex:i];
-                if (i == self.currentPage)
-                    dot.image = [UIImage imageNamed:@"findDotSel.png"];
-                else
-                    dot.image = [UIImage imageNamed:@"findDotNull.png"];
-            }
+//            if ([[self.pageCtrl.subviews objectAtIndex:i] isKindOfClass:[UIImageView class]])
+//            {
+//                UIImageView *dot = (UIImageView *)[self.pageCtrl.subviews objectAtIndex:i];
+//                if (i == self.currentPage)
+//                {
+//                    UIImage *selImage = [UIImage imageNamed:@"findDotSel.png"];
+//                    dot.bounds = CGRectMake(0, 0, selImage.size.width, selImage.size.height);
+//                    dot.image = selImage;
+//                }
+//                else
+//                {
+//                    UIImage *unSelImage = [UIImage imageNamed:@"findDotNull.png"];
+//                    dot.bounds = CGRectMake(0, 0, unSelImage.size.width, unSelImage.size.height);
+//                    dot.image = unSelImage;
+//                }
+//            }
         }
     }
+    self.pageCtrl.hidden = NO;
 }
 
 - (void)dealloc
@@ -115,6 +123,7 @@
     {
         self.totalPages = [_delegate numberOfImageScrollView: self];
         self.pageCtrl.numberOfPages = self.totalPages;
+        self.currentPage = 0;
         self.pageCtrl.frame = CGRectMake(self.frame.size.width-15*self.totalPages, self.frame.size.height-20, 20, 20);
     }
     if ([_delegate respondsToSelector:@selector(imageScrollView:imageViewForPageAtIndex:)])

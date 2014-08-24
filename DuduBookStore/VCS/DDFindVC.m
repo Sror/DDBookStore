@@ -34,6 +34,7 @@
     self.imageScrollView.delegate = self;
     [self.scrollview addSubview:_imageScrollView];
     [self.imageScrollView reloadData];
+    [self addRightNavToShelter];
 }
 
 

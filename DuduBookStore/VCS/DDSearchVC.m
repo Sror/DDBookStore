@@ -59,6 +59,7 @@
     self.tableView.rowHeight = 129;
 
     [self getCenterArray];
+    [self addRightNavToShelter];
 }
 
 #define TAGBTN_TAG 100

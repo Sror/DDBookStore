@@ -16,6 +16,6 @@
 #pragma mark - 导航栏
 - (UIBarButtonItem *)createNavLeftBtnItemNormal:(NSString *)imgStr highlight:(NSString *)highStr;
 - (UIBarButtonItem *)createNavRightBtnItem:(UIViewController *)target normal:(NSString *)imgStr highlight:(NSString *)highStr;
-
+- (void)addRightNavToShelter;
 
 @end

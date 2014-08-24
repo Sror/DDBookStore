@@ -10,7 +10,7 @@
 #import "DDClassifyCell.h"
 #import "DDBookStoreCell.h"
 
-@interface DDClassifyVC ()<UITableViewDataSource>
+@interface DDClassifyVC ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -29,16 +29,12 @@
 {
     [super viewDidLoad];
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 136;
+    self.tableView.delegate = self;
     self.tableView.separatorColor = [UIColor clearColor];
     self.dataArray = [[NSMutableArray alloc] initWithObjects:FenLei1,FenLei2,FenLei3,FenLei4,nil];
     [self.tableView reloadData];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [self addRightNavToShelter];
 }
 
 - (NSMutableArray *)fakeData
@@ -56,7 +52,22 @@
     return array;
 }
 #pragma mark -
+#pragma mark - TableView Delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row==[self.dataArray count]-1)
+        return 195;
+    else
+        return 136;
+}
+
+#pragma mark -
 #pragma mark - TableView DataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.dataArray count];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -95,6 +106,7 @@
                 }
             }
         }
+        cell.isShort = YES;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell.flagBtn setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"bookStoreFlag%d.png",(int)indexPath.row+1]] forState:UIControlStateNormal];
         [cell.flagBtn setTitle:[flagStrArray1 objectAtIndex:indexPath.row] forState:UIControlStateNormal];

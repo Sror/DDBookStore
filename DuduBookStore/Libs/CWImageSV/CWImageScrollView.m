@@ -45,14 +45,45 @@
         _singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
         [self.scrollView addGestureRecognizer:_singleTap];
         
-        _pageCtrl = [[UIPageControl alloc] initWithFrame:CGRectMake(frame.size.width - 150, frame.size.height - 30, 30, 30)];
+        _pageCtrl = [[UIPageControl alloc] init];
         self.pageCtrl.userInteractionEnabled = NO;
+        self.pageCtrl.currentPage = 0;
         [self addSubview:_pageCtrl];
         
         self.currentPage = 0;
+        [self updateDots];
     }
     return self;
 }
+
+-(void)updateDots
+{
+    for (int i = 0; i < [self.pageCtrl.subviews count]; i++)
+    {
+        NSLog(@"%D%@",i,[[self.pageCtrl.subviews objectAtIndex:i] class]);
+
+        if (IOS7_OR_LATER)
+        {
+            UIView *dot = [self.pageCtrl.subviews objectAtIndex:i];
+            if (i == self.currentPage)
+                dot.backgroundColor = [UIColor whiteColor];
+            else
+                dot.backgroundColor = [UIColor lightGrayColor];
+        }
+        else
+        {
+            if ([[self.pageCtrl.subviews objectAtIndex:i] isKindOfClass:[UIImageView class]])
+            {
+                UIImageView *dot = (UIImageView *)[self.pageCtrl.subviews objectAtIndex:i];
+                if (i == self.currentPage)
+                    dot.image = [UIImage imageNamed:@"findDotSel.png"];
+                else
+                    dot.image = [UIImage imageNamed:@"findDotNull.png"];
+            }
+        }
+    }
+}
+
 - (void)dealloc
 {
     if (self.isAutoScroll)
@@ -71,18 +102,27 @@
     [super dealloc];
 }
 
+- (void)setCurrentPage:(int)page
+{
+    _currentPage = page;
+    self.pageCtrl.currentPage = page;
+    [self updateDots];
+}
+
 - (void)reloadData
 {
     if ([_delegate respondsToSelector:@selector(numberOfImageScrollView:)])
     {
         self.totalPages = [_delegate numberOfImageScrollView: self];
+        self.pageCtrl.numberOfPages = self.totalPages;
+        self.pageCtrl.frame = CGRectMake(self.frame.size.width-15*self.totalPages, self.frame.size.height-20, 20, 20);
     }
     if ([_delegate respondsToSelector:@selector(imageScrollView:imageViewForPageAtIndex:)])
     {
         for (int i=0; i<self.totalPages; i++)
         {
             UIImageView *imageView = [_delegate imageScrollView:self imageViewForPageAtIndex:i];
-            imageView.autoresizesSubviews = YES;
+            imageView.autoresizesSubviews = NO;
             [self.imageArray addObject:imageView];
         }
         [self loadData];
@@ -106,11 +146,11 @@
    
     self.curImageView = [self.imageArray objectAtIndex:self.currentPage];
     self.curImageView.tag = 2;
-    self.curImageView.frame = CGRectMake(320, 0, self.frame.size.width,self.frame.size.height);
+    self.curImageView.frame = CGRectMake(self.frame.size.width, 0, self.frame.size.width,self.frame.size.height);
 
     self.nextImageView = [self.imageArray objectAtIndex:last];
     self.nextImageView.tag = 3;
-    self.nextImageView.frame = CGRectMake(640, 0, self.frame.size.width,self.frame.size.height);
+    self.nextImageView.frame = CGRectMake(self.frame.size.width*2, 0, self.frame.size.width,self.frame.size.height);
     
     [self.scrollView addSubview:_preImageView];
     [self.scrollView addSubview:_curImageView];
@@ -119,16 +159,15 @@
 
 - (void)toPreView
 {
-    float temp = ([UIScreen mainScreen].applicationFrame.size.width - self.curImageView.frame.size.width)/2;
     self.preImageView = (UIImageView *)[self.scrollView viewWithTag:1];
     self.curImageView = (UIImageView *)[self.scrollView viewWithTag:2];
     self.nextImageView = (UIImageView *)[self.scrollView viewWithTag:3];
     
-    self.preImageView.frame = CGRectMake(self.frame.size.width+temp, 0, self.curImageView.frame.size.width, self.frame.size.height);
-    self.curImageView.frame = CGRectMake(2 * self.frame.size.width+temp,0,self.curImageView.frame.size.width, self.frame.size.height);
+    self.preImageView.frame = CGRectMake(self.frame.size.width, 0, self.curImageView.frame.size.width, self.frame.size.height);
+    self.curImageView.frame = CGRectMake(2 * self.frame.size.width,0,self.curImageView.frame.size.width, self.frame.size.height);
     [self.nextImageView removeFromSuperview];
     self.nextImageView = [self.imageArray objectAtIndex:(self.currentPage + self.totalPages-2)%self.totalPages];
-    self.nextImageView.frame = CGRectMake(temp, 0, self.curImageView.frame.size.width, self.frame.size.height);
+    self.nextImageView.frame = CGRectMake(0, 0, self.curImageView.frame.size.width, self.frame.size.height);
     [self.scrollView addSubview:_nextImageView];
        
     UIImageView *tempIV = [self.imageArray objectAtIndex:self.currentPage];
@@ -142,18 +181,16 @@
 
 - (void)toNextView
 {
-    float temp = ([UIScreen mainScreen].applicationFrame.size.width - self.curImageView.frame.size.width)/2;
-    
     self.preImageView = (UIImageView *)[self.scrollView viewWithTag:1];
     self.curImageView = (UIImageView *)[self.scrollView viewWithTag:2];
     self.nextImageView = (UIImageView *)[self.scrollView viewWithTag:3];
     
     [self.preImageView removeFromSuperview];
-    self.curImageView.frame=CGRectMake(0+temp,0,self.curImageView.frame.size.width, self.frame.size.height);
-    self.nextImageView.frame = CGRectMake(self.frame.size.width+temp, 0, self.curImageView.frame.size.width, self.frame.size.height);
+    self.curImageView.frame=CGRectMake(0,0,self.curImageView.frame.size.width, self.frame.size.height);
+    self.nextImageView.frame = CGRectMake(self.frame.size.width, 0, self.curImageView.frame.size.width, self.frame.size.height);
     
     self.preImageView = [self.imageArray objectAtIndex:(self.currentPage + 2)%self.totalPages];
-    self.preImageView.frame = CGRectMake(2*self.frame.size.width+temp, 0, self.curImageView.frame.size.width, self.frame.size.height);
+    self.preImageView.frame = CGRectMake(2*self.frame.size.width, 0, self.curImageView.frame.size.width, self.frame.size.height);
     [self.scrollView addSubview:_preImageView];
     
     UIImageView *tempIV = [self.imageArray objectAtIndex:(self.currentPage+1)%self.totalPages];
@@ -200,49 +237,6 @@
     }
 }
 
-//旋转+放大/缩小的动画。
-- (void)transformImageView:(UIImageView *)ima  animation:(BOOL)anima
-{    
-    float scale = [self getScale:ima];
-    int angle = -90;
-    float position = [UIScreen mainScreen].applicationFrame.size.height/2;
-    NSLog(@"scale == %f",scale);
-
-    //如果当前状态为已经变形过，则调整两个参数实现恢复原状态的动画
-    if (self.hasTransformed)
-    {
-        scale = 1;
-        angle = 0;
-        position = 90;
-    }
-    if (anima)
-    {
-        [UIView beginAnimations:nil context:nil];
-        [UIView setAnimationDelegate:self];
-        [UIView setAnimationWillStartSelector:@selector(begin)];
-        [UIView setAnimationDidStopSelector:@selector(stop)];
-        [UIView setAnimationDuration:0.3];
-        [self transfomImageView:ima ToScale:scale ToAngle:angle ToYPosition:position];
-        [UIView commitAnimations];
-    }
-    else
-    {
-        [self transfomImageView:ima ToScale:scale ToAngle:angle ToYPosition:position];
-    }
-}
-
-//旋转的算法
-- (void)transfomImageView:(UIImageView *)ima ToScale:(float)scale ToAngle:(int)angle ToYPosition:(float)yPosition
-{
-    //ima.frame = CGRectMake(0, 0, 320, 480);
-    int theTheta=angle;//正数为顺时针旋转 负数为逆时针
-    CGFloat radian=theTheta *(M_PI/180.0f);
-    CGAffineTransform transform = CGAffineTransformMakeRotation(radian);
-    CGAffineTransform scaled = CGAffineTransformScale(transform, scale, scale);
-    [ima setTransform:scaled];
-    ima.center=CGPointMake(ima.center.x, yPosition);
-}
-
 #pragma mark -
 #pragma mark - UIViewAnimationDelegate
 - (void)begin
@@ -271,17 +265,6 @@
 #pragma mark - handleTap
 -(void)handleTap:(UITapGestureRecognizer *)tap
 {
-    for (int i=0; i<self.totalPages; i++)
-    {
-        if (i == self.currentPage)
-        {
-            [self transformImageView:[self.imageArray objectAtIndex:i] animation:YES];
-        }
-        else
-        {
-            [self transformImageView:[self.imageArray objectAtIndex:i] animation:NO];
-        }
-    }
     if ([_delegate respondsToSelector:@selector(didTabScrollView: AtIndex:)])
     {
         [_delegate didTabScrollView:self AtIndex:self.currentPage];

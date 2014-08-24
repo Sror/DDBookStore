@@ -28,22 +28,25 @@
         [self.scrollView addSubview:btn];
         
         UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(83*i+14, 107, 68, 15)];
-        label1.font = [UIFont systemFontOfSize:13];
+        label1.font = [UIFont systemFontOfSize:11];
         label1.text = book.name;
         label1.textColor = [UIColor darkGrayColor];
         [self.scrollView addSubview:label1];
-        
-        UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(83*i+14, 121, 68, 12)];
-        label2.font = [UIFont systemFontOfSize:10];
-        label2.text = book.writer;
-        label2.textColor = [UIColor lightGrayColor];
-        [self.scrollView addSubview:label2];
-        
-        UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(83*i+14, 137, 68, 12)];
-        label3.font = [UIFont systemFontOfSize:10];
-        label3.text = book.sort;
-        label3.textColor = [UIColor lightGrayColor];
-        [self.scrollView addSubview:label3];
+  
+        if (!self.isShort)
+        {
+            UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(83*i+14, 123, 68, 12)];
+            label2.font = [UIFont systemFontOfSize:9];
+            label2.text = book.writer;
+            label2.textColor = [UIColor lightGrayColor];
+            [self.scrollView addSubview:label2];
+            
+            UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(83*i+14, 137, 68, 12)];
+            label3.font = [UIFont systemFontOfSize:9];
+            label3.text = book.sort;
+            label3.textColor = [UIColor lightGrayColor];
+            [self.scrollView addSubview:label3];
+        }
     }
 }
 

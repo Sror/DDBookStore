@@ -106,6 +106,26 @@
     //子类重写
 }
 
+- (void)addRightNavToShelter
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0.0f, 0.0f,60, 30);
+    btn.backgroundColor = [UIColor clearColor];
+    [btn setTitle:@"书架" forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(rightNavAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item  = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+# pragma mark -
+# pragma mark - Action
+- (void)rightNavAction:(UIButton *)btn
+{
+    [self.revealSideViewController popViewControllerAnimated:YES];
+}
+
 /*
 #pragma mark - Navigation
 

@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *moreBtn;
 @property (weak, nonatomic) IBOutlet UIButton *flagBtn;
 
+@property (assign, nonatomic) BOOL isShort;
+
 @end

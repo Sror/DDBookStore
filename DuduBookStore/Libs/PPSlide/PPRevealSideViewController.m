@@ -90,7 +90,7 @@ static const CGFloat MAX_TRIGGER_OFFSET = 100.0;
         
         self.bouncingOffset = -1.0;
         
-        self.fakeiOS7StatusBarColor = [UIColor blackColor];
+        self.fakeiOS7StatusBarColor = [UIColor clearColor];
         
         self.panInteractionsWhenClosed = PPRevealSideInteractionNavigationBar;
         self.panInteractionsWhenOpened = PPRevealSideInteractionNavigationBar | PPRevealSideInteractionContentView;
@@ -1175,8 +1175,9 @@ static const CGFloat MAX_TRIGGER_OFFSET = 100.0;
 
 - (CGRect)getSideViewFrameFromRootFrame:(CGRect)rootFrame andDirection:(PPRevealSideDirection)direction alreadyFullScreenLayout:(BOOL)alreadyFullScreenLayout {
     CGRect slideFrame = CGRectZero;
-    CGFloat yOffset = PPSystemVersionGreaterOrEqualThan(7.0) ? 20.0 : 0.0;
-    
+    //NOTE:修改此处解决ios7 状态栏黑色的问题
+    //CGFloat yOffset = PPSystemVersionGreaterOrEqualThan(7.0) ? 20.0 : 0.0;
+    CGFloat yOffset = 0.0;
     if ([self isOptionEnabled:PPRevealSideOptionsiOS7StatusBarMoving]) {
         yOffset = 0.0;
     }

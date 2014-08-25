@@ -75,6 +75,11 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
+                        <view contentMode="scaleToFill" id="wlw-vp-Fu0">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.81568634510000004" green="0.81568634510000004" blue="0.81568634510000004" alpha="1" colorSpace="deviceRGB"/>
+                        </view>
                         <view contentMode="scaleToFill" id="jlZ-13-A1P">
                             <rect key="frame" x="0.0" y="60" width="320" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

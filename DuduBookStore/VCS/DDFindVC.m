@@ -32,6 +32,7 @@
     [self.scrollview setContentSize:CGSizeMake(320, 520)];
     self.imageScrollView = [[CWImageScrollView alloc] initWithFrame:CGRectMake(10, 110, 297, 95)];
     self.imageScrollView.delegate = self;
+    self.imageScrollView.isAutoScroll = YES;
     [self.scrollview addSubview:_imageScrollView];
     [self.imageScrollView reloadData];
     [self addRightNavToShelter];

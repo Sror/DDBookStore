@@ -18,7 +18,7 @@
 - (void)setDataArray:(NSMutableArray *)array
 {
     _dataArray = array;
-    [self.scrollView setContentSize:CGSizeMake(83*[self.dataArray count]+14, 150)];
+    [self.scrollView setContentSize:CGSizeMake(83*[self.dataArray count]+14, 160)];
     for (int i=0; i<[self.dataArray count]; i++)
     {
         DDBook *book = [self.dataArray objectAtIndex:i];
@@ -36,6 +36,7 @@
             label1.numberOfLines = 0;
             label1.lineBreakMode = NSLineBreakByWordWrapping;
             self.scrollView.frame = CGRectMake(0, 34, 320, 170);
+            [self.scrollView setContentSize:CGSizeMake(83*[self.dataArray count]+14, 170)];
         }
         label1.textColor = [UIColor blackColor];
         [self.scrollView addSubview:label1];

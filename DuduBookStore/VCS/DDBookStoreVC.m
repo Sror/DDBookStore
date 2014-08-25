@@ -113,6 +113,8 @@
             }
         }
     }
+    cell.contentView.clipsToBounds = NO;
+    cell.scrollView.showsVerticalScrollIndicator = YES;
     [cell.flagBtn setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"bookStoreFlag%d.png",(int)indexPath.row+1]] forState:UIControlStateNormal];
     [cell.flagBtn setTitle:[flagStrArray1 objectAtIndex:indexPath.row] forState:UIControlStateNormal];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

@@ -37,16 +37,22 @@
     [self addRightNavToShelter];
 }
 
+
+#define ImageArray1 @[@"newbook6.png",@"newbook7.png",@"newbook8.png",@"newbook9.png",@"newbook10.png"]
+#define NameArray1 @[@"男孩成长秘密",@"藏地密码",@"城南旧事",@"不生病的真谛",@"小王子"]
+#define WriterArray1 @[@"[美]迈克尔·汤普...",@"何马",@"林海音",@"林弼",@"[法]安东尼·圣埃..."]
+#define SortArray1 @[@"亲子少儿",@"文学艺术",@"流行小说",@"生活时尚",@"文学艺术"]
+
 - (NSMutableArray *)fakeData
 {
     NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:nil];
-    for (int j = 0; j<[bookImageArray1 count]; j++)
+    for (int j = 0; j<[ImageArray1 count]; j++)
     {
         DDBook *book = [[DDBook alloc] init];
-        book.cover = [bookImageArray1 objectAtIndex:j];
-        book.name = [booknameArray1 objectAtIndex:j];
-        book.writer = [bookwriterArray1 objectAtIndex:j];
-        book.sort = [bookSortArray1 objectAtIndex:j];
+        book.cover = [ImageArray1 objectAtIndex:j];
+        book.name = [NameArray1 objectAtIndex:j];
+        book.writer = [WriterArray1 objectAtIndex:j];
+        book.sort = [SortArray1 objectAtIndex:j];
         [array addObject:book];
     }
     return array;
@@ -109,9 +115,11 @@
         cell.isShort = YES;
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [cell.flagBtn setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"bookStoreFlag%d.png",(int)indexPath.row+1]] forState:UIControlStateNormal];
-        [cell.flagBtn setTitle:[flagStrArray1 objectAtIndex:indexPath.row] forState:UIControlStateNormal];
+        [cell.flagBtn setTitle:@"畅销推荐" forState:UIControlStateNormal];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.dataArray = [self fakeData];
+        cell.moreBtn.hidden = YES;
+        cell.scrollView.showsVerticalScrollIndicator = NO;
         return cell;
     }
 

@@ -35,8 +35,9 @@
             label1.frame = CGRectMake(83*i+14, 110, 68, 30);
             label1.numberOfLines = 0;
             label1.lineBreakMode = NSLineBreakByWordWrapping;
+            self.scrollView.frame = CGRectMake(0, 34, 320, 170);
         }
-        label1.textColor = [UIColor darkGrayColor];
+        label1.textColor = [UIColor blackColor];
         [self.scrollView addSubview:label1];
   
         if (!self.isShort)

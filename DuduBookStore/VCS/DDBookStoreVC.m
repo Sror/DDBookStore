@@ -40,6 +40,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.title = @"书馆";
     self.tableView.sectionHeaderHeight = 35;
     self.tableView.sectionFooterHeight = 10;
     [self.revealSideViewController setDirectionsToShowBounce:PPRevealSideDirectionLeft | PPRevealSideDirectionRight];

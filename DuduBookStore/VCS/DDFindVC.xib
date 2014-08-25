@@ -150,6 +150,10 @@
                             <rect key="frame" x="13" y="215" width="42" height="42"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="findVIPFree.png" id="Gce-AR-0h8">
+                            <rect key="frame" x="165" y="215" width="42" height="42"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                     </subviews>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </scrollView>
@@ -166,6 +170,7 @@
         <image name="findBtn4.png" width="24" height="24"/>
         <image name="findBtn5.png" width="24" height="24"/>
         <image name="findFreeToday.png" width="42" height="42"/>
+        <image name="findVIPFree.png" width="42" height="42"/>
         <image name="findtest4.png" width="145" height="95"/>
         <image name="findtest5.png" width="145" height="95"/>
         <image name="findtest6.png" width="145" height="95"/>

@@ -12,6 +12,7 @@
 
 @interface DDBookBarVC ()<CWImageScrollViewDelegate>
 @property (strong, nonatomic) CWImageScrollView *imageScrollView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -34,7 +35,7 @@
     self.imageScrollView = [[CWImageScrollView alloc] initWithFrame:CGRectMake(7, 7, 306, 152)];
     self.imageScrollView.delegate = self;
     self.imageScrollView.isAutoScroll = YES;
-    [self.view addSubview:_imageScrollView];
+    [self.scrollView addSubview:_imageScrollView];
     [self.imageScrollView reloadData];
     [self addRightNavToShelter];
     
@@ -90,9 +91,9 @@
 # pragma mark - Action
 - (void)showLeft
 {
-    DDMyVC *vc = [[DDMyVC alloc] initWithNibName:@"DDMyVC" bundle:Nil];
-    FBNavigationController *nav = [[FBNavigationController alloc] initWithRootViewController:vc];
-    [self.revealSideViewController pushViewController:nav onDirection:PPRevealSideDirectionLeft withOffset:0 animated:NO];
-    PP_RELEASE(nav);
+//    DDMyVC *vc = [[DDMyVC alloc] initWithNibName:@"DDMyVC" bundle:Nil];
+//    FBNavigationController *nav = [[FBNavigationController alloc] initWithRootViewController:vc];
+//    [self.revealSideViewController pushViewController:nav onDirection:PPRevealSideDirectionLeft withOffset:0 animated:NO];
+//    PP_RELEASE(nav);
 }
 @end

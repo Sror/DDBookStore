@@ -70,6 +70,8 @@
 		07AAA4DB19A9B9CA00C822E4 /* DDSearchHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AAA4D919A9B9CA00C822E4 /* DDSearchHomeCell.m */; };
 		07AAA4DC19A9B9CA00C822E4 /* DDSearchHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07AAA4DA19A9B9CA00C822E4 /* DDSearchHomeCell.xib */; };
 		07AAA4E019A9C9E500C822E4 /* CWImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AAA4DF19A9C9E500C822E4 /* CWImageScrollView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		07AC63C319B4C71400520045 /* edituserinfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AC63C219B4C71400520045 /* edituserinfo@2x.png */; };
+		07AC63C519B4C71900520045 /* boy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07AC63C419B4C71900520045 /* boy@2x.png */; };
 		07ADA49C199D114700C6C26B /* PPRevealSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07ADA49B199D114700C6C26B /* PPRevealSideViewController.m */; };
 		07ADA4B7199F6E9800C6C26B /* bookStoreFlag1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07ADA4B4199F6E9800C6C26B /* bookStoreFlag1@2x.png */; };
 		07ADA4B8199F6E9800C6C26B /* bookStoreFlag2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07ADA4B5199F6E9800C6C26B /* bookStoreFlag2@2x.png */; };
@@ -244,6 +246,8 @@
 		07AAA4DA19A9B9CA00C822E4 /* DDSearchHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DDSearchHomeCell.xib; sourceTree = "<group>"; };
 		07AAA4DE19A9C9E500C822E4 /* CWImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWImageScrollView.h; sourceTree = "<group>"; };
 		07AAA4DF19A9C9E500C822E4 /* CWImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWImageScrollView.m; sourceTree = "<group>"; };
+		07AC63C219B4C71400520045 /* edituserinfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "edituserinfo@2x.png"; sourceTree = "<group>"; };
+		07AC63C419B4C71900520045 /* boy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boy@2x.png"; sourceTree = "<group>"; };
 		07ADA49A199D114700C6C26B /* PPRevealSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRevealSideViewController.h; sourceTree = "<group>"; };
 		07ADA49B199D114700C6C26B /* PPRevealSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRevealSideViewController.m; sourceTree = "<group>"; };
 		07ADA4B4199F6E9800C6C26B /* bookStoreFlag1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookStoreFlag1@2x.png"; sourceTree = "<group>"; };
@@ -709,6 +713,8 @@
 		C5A7AF8A1998C4E3002996E0 /* My */ = {
 			isa = PBXGroup;
 			children = (
+				07AC63C219B4C71400520045 /* edituserinfo@2x.png */,
+				07AC63C419B4C71900520045 /* boy@2x.png */,
 				C5A7AF8B1998C4F1002996E0 /* chongzhi@2x.png */,
 				C5A7AF8C1998C4F1002996E0 /* lixian@2x.png */,
 				C5A7AFA11998D966002996E0 /* reddot@2x.png */,
@@ -805,6 +811,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07AAA4AA19A8E08800C822E4 /* classify3@2x.png in Resources */,
+				07AC63C319B4C71400520045 /* edituserinfo@2x.png in Resources */,
 				07AAA4A119A8DE0700C822E4 /* shelter4@2x.png in Resources */,
 				07AAA4CF19A9B4AF00C822E4 /* findtest8@2x.png in Resources */,
 				07ADA4F019A0B22100C6C26B /* bookStoreFlag4@2x.png in Resources */,
@@ -828,6 +835,7 @@
 				07ADA4DC19A0AE9B00C6C26B /* hotbook1@2x.png in Resources */,
 				C5A7AFB51998E18E002996E0 /* shujia_reH@2x.png in Resources */,
 				C5A7AF981998C4F1002996E0 /* my_zhuxiao@2x.png in Resources */,
+				07AC63C519B4C71900520045 /* boy@2x.png in Resources */,
 				07B0807919A50694003AFA0F /* DDClassifyCell.xib in Resources */,
 				C5A7AF801998AF0D002996E0 /* DDFindVC.xib in Resources */,
 				07ADA4B7199F6E9800C6C26B /* bookStoreFlag1@2x.png in Resources */,

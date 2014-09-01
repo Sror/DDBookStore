@@ -20,16 +20,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ge3-CJ-PJo">
-                    <rect key="frame" x="269" y="13" width="45" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <state key="normal" title="注销" backgroundImage="my_zhuxiao.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VIP.png" id="ohJ-1D-mHk">
-                    <rect key="frame" x="138" y="33" width="30" height="12"/>
+                    <rect key="frame" x="154" y="33" width="30" height="12"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mydarkcover.png" id="4Fo-XU-sct">
@@ -243,6 +235,17 @@
                         </imageView>
                     </subviews>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="K1w-V2-Aun">
+                    <rect key="frame" x="261" y="13" width="51" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" image="edituserinfo.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boy.png" id="BZH-dy-qqP">
+                    <rect key="frame" x="134" y="32" width="14" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.97953464673913049" green="0.97953464673913049" blue="0.97953464673913049" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -252,10 +255,11 @@
     <resources>
         <image name="VIP.png" width="30" height="12"/>
         <image name="avata.png" width="53" height="53"/>
+        <image name="boy.png" width="14" height="14"/>
         <image name="chongzhi.png" width="32" height="24"/>
+        <image name="edituserinfo.png" width="51" height="20"/>
         <image name="lixian.png" width="32" height="24"/>
         <image name="myHeadBack.png" width="320" height="160"/>
-        <image name="my_zhuxiao.png" width="45" height="20"/>
         <image name="mydarkcover.png" width="320" height="60"/>
         <image name="mysep.png" width="1" height="1"/>
         <image name="noteCenter.png" width="68" height="26"/>
